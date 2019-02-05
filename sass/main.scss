@@ -1,187 +1,29 @@
-/*
-COLORS:
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
 
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
+// 2. Vendors
+@import
+  'vendors/normalize';
 
-*/
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/animation';
 
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+// 4. Layout-related sections
+@import
+  'layout/header';
 
-$color-grey-dark: #777;
-$color-white: #fff;
+// 5. Components
+@import
+  'components/button',
+  'components/heading';
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  padding: 3rem;
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: $color-grey-dark;
-  box-sizing: border-box;
-}
-
-.header {
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-
-    &__logo-box {
-      position: absolute;
-      top: 4rem;
-      left: 4rem;
-    }
-    
-    &__logo {
-      height: 3.5rem;
-    }
-    
-    &__center-box {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-}
-
-.heading-primary {
-  margin-bottom: 6rem;
-  color: $color-white;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-
-  &--main {
-    display: block;
-    font-size: 6rem;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1s ease-out;
-  }
-  
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-  }
-
-}
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  80% {
-    transform: translate(1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translate(-1rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-.btn {
-  &:link,
-  &:visited {
-  position: relative;
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  transition: all .2s;
-  }
-
-  &:hover {
-  transform: translateY(-.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-  }
-
-  &:active {
-  transform: translateY(-.1rem);
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-  }
-
-  &--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-  }
-
-  &::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 10rem;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: .4s ease-out;
-  }
-
-  &--white::after {
-  background-color: $color-white;
-  }
-
-  &:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-  }
-
-  &--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards;
-  }
-}
+// 6. Page-specific styles
+@import
+  'pages/home';
