@@ -20,13 +20,15 @@
 @import
   'layout/grid',
   'layout/header',
-  'layout/about';
+  'layout/about',
+  'layout/features';
 
 // 5. Components
 @import
   'components/button',
   'components/heading',
-  'components/composition';
+  'components/composition',
+  'components/feature-box';
 
 // 6. Page-specific styles
 @import
