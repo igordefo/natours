@@ -31,6 +31,15 @@
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.3);
     transition: all .4s .2s;
+
+    @include respond(tab-land) {
+      width: 90%;
+    }
+
+    @include respond(tab-port) {
+      display: flex;
+      flex-flow: column wrap;
+    }
   }
 
   &__close {
@@ -55,18 +64,36 @@
   &__left {
     display: table-cell;
     width: 33.333333%;
+
+    @include respond(tab-port) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: min-content;
+    }
   }
 
   &__right {
     display: table-cell;
     padding: 3rem 5rem;
     width: 66.666667%;
-    vertical-align: middle;    
+    vertical-align: middle;  
+    
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+
+    @include respond(tab-port) {
+      display: inline-block;
+      width: 49.5%;
+      flex: 0 1 auto;
+      height: 100%;
+    }
   }
 
   &__text {
@@ -78,5 +105,9 @@
     -ms-hyphens: auto;
     hyphens: auto;
     -webkit-locale: "en";
+
+    @include respond(tab-port) {
+      column-count: 1;
+    }
   }
 }
