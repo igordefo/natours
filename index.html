@@ -56,9 +56,9 @@
             </div>
           <div class="col-1-of-2">
             <div class="composition">
-              <img src="img/nat-1-large.jpg" alt="Photo one" class="composition__photo composition__photo--1">
-              <img src="img/nat-2-large.jpg" alt="Photo two" class="composition__photo composition__photo--2">
-              <img src="img/nat-3-large.jpg" alt="Photo three" class="composition__photo composition__photo--3">
+              <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" size="(max-width: 900px) 20vw, (max-width: 300px) 30vw, 300px" alt="Photo one" class="composition__photo composition__photo--1">
+              <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" size="(max-width: 900px) 20vw, (max-width: 300px) 30vw, 300px" alt="Photo two" class="composition__photo composition__photo--2">
+              <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" size="(max-width: 900px) 20vw, (max-width: 300px) 30vw, 300px" alt="Photo three" class="composition__photo composition__photo--3">
             </div>
           </div>
         </div>
@@ -250,7 +250,7 @@
             <div class="book__form">
               <form action="#" class="form">
                 <div class="h-margin-bottom-medium">
-                  <h2 class="secondary-heading">Booking now!</h2>
+                  <h2 class="secondary-heading">Start booking now!</h2>
                 </div>
                 <div class="form__group">
                   <input class="form__input" type="text" placeholder="Full name" required id="name">
@@ -260,14 +260,14 @@
                   <input class="form__input" type="email" placeholder="Email address" required id="email">
                   <label class="form__label" for="email">Email address</label>
                 </div>
-                <div class="form__group">
+                <div class="form__group h-margin-bottom-big">
                   <div class="form__radio-group">
                     <input class="form__radio-input"  type="radio" id="small" name="size">
                     <label class="form__radio-label" for="small">
                       <span class="form__radio-button"></span>
                       Small tour group</label>
                   </div>
-                  <div class="form__radio-group h-margin-bottom-medium">
+                  <div class="form__radio-group">
                     <input class="form__radio-input" type="radio" id="large" name="size">
                     <label class="form__radio-label" for="large">
                       <span class="form__radio-button"></span>
@@ -283,7 +283,10 @@
     </main>
     <footer class="footer">
       <div class="footer__logo-box h-margin-bottom-big">
-        <img class="footer__logo" src="img/logo-green-1x.png" alt="Logo">
+        <picture class="footer__logo">
+          <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+          <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="Logo">
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
